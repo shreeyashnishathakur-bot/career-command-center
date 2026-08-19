@@ -16,7 +16,7 @@ function NavRow({
   item: NavItem;
   collapsed: boolean;
   active: boolean;
-  onNavigate?: () => void;
+  onNavigate?: (() => void) | undefined;
 }) {
   const Icon = item.icon;
   const base = cn(
@@ -66,8 +66,8 @@ function SidebarBody({
   onNavigate,
 }: {
   collapsed: boolean;
-  onToggleCollapse?: () => void;
-  onNavigate?: () => void;
+  onToggleCollapse?: (() => void) | undefined;
+  onNavigate?: (() => void) | undefined;
 }) {
   const { pathname } = useLocation();
 
