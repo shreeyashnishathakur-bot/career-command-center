@@ -78,10 +78,10 @@ function DashboardContent() {
       <CareerAIInput
         context={{
           name,
-          targetRole: profile?.targetRole,
           readinessScore: score.overall,
           resumeCount: resumes.length,
-          skills: profile?.skills,
+          ...(profile?.targetRole ? { targetRole: profile.targetRole } : {}),
+          ...(profile?.skills ? { skills: profile.skills } : {}),
         }}
       />
 
