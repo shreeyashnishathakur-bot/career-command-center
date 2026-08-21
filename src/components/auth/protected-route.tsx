@@ -32,7 +32,7 @@ export function ProtectedRoute({ children }: { children: ReactNode }) {
   // reviewed in the Lovable preview. All data reads stay disabled (no uid),
   // so it only ever shows empty states — never another user's data.
   const previewMode = location.search
-    ? (location.search as Record<string, unknown>).preview === "1"
+    ? (location.search as Record<string, unknown>)["preview"] === "1"
     : false;
 
   useEffect(() => {
