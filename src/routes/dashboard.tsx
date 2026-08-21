@@ -54,7 +54,7 @@ function DashboardContent() {
     resumes,
     applications,
     jobMatches,
-    interviewSessions,
+
     activity,
     score,
     profileCompletion,
@@ -107,7 +107,6 @@ function DashboardContent() {
         <CareerActivity activity={activity} />
       </div>
 
-      {interviewSessions.length === 0 ? null : null}
     </div>
   );
 }
