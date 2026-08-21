@@ -59,7 +59,7 @@ export function CtaBanner() {
               } else {
                 void navigate({
                   to: "/login",
-                  search: { redirect: "/resumes" },
+                  search: { redirect: "/dashboard" },
                 });
               }
             }}

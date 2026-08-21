@@ -95,7 +95,7 @@ export function Navbar() {
           {!loading && user ? (
             <>
               <Button variant="hero" size="sm" className="rounded-lg" asChild>
-                <Link to="/resumes">My Resumes</Link>
+                <Link to="/dashboard">Dashboard</Link>
               </Button>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -172,8 +172,8 @@ export function Navbar() {
             <div className="mt-3 flex flex-col gap-2">
               {user ? (
                 <Button variant="hero" className="w-full rounded-xl" asChild>
-                  <Link to="/resumes" onClick={() => setOpen(false)}>
-                    My Resumes
+                  <Link to="/dashboard" onClick={() => setOpen(false)}>
+                    Dashboard
                   </Link>
                 </Button>
               ) : (
