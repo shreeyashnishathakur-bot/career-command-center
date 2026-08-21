@@ -28,8 +28,16 @@ export function ProtectedRoute({ children }: { children: ReactNode }) {
   const location = useLocation();
   const attemptedRef = useRef(false);
 
+  // `?preview=1` lets the page render without a session so the UI can be
+  // reviewed in the Lovable preview. All data reads stay disabled (no uid),
+  // so it only ever shows empty states — never another user's data.
+  const previewMode = location.search
+    ? (location.search as Record<string, unknown>).preview === "1"
+    : false;
+
   useEffect(() => {
     if (attemptedRef.current) return;
+    if (previewMode) return;
     if (!loading && !user) {
       attemptedRef.current = true;
       void navigate({
