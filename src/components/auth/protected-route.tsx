@@ -45,9 +45,9 @@ export function ProtectedRoute({ children }: { children: ReactNode }) {
         search: { redirect: location.href },
       });
     }
-  }, [loading, user, navigate, location.href]);
+  }, [loading, user, navigate, location.href, previewMode]);
 
-  if (loading || !user) {
+  if (!previewMode && (loading || !user)) {
     return (
       <div className="flex min-h-dvh items-center justify-center bg-background">
         <Loader2 className="size-6 animate-spin text-muted-foreground" />
