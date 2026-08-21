@@ -23,7 +23,7 @@ export function LoginForm() {
   const [submitting, setSubmitting] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
 
-  const destination = search.redirect ?? "/resumes";
+  const destination = search.redirect ?? "/dashboard";
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
